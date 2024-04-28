@@ -1,110 +1,157 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <style>
-        body { margin: 0; padding: 0; }
-        html { height: 100%; cursor: default; }
         body {
-            font-family: "Roboto", sans-serif; /* Default font */
-            width: 100%; height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+            cursor: default;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            width: 100%;
+            height: 100%;
             text-align: center;
             display: table;
             opacity: 1;
-            animation: fadein 3s forwards;
         }
+
         h2 {
             font-weight: 300;
             margin-bottom: 25px;
         }
+
         img {
-            width: 25%; /* Image width */
-            border: 0; /* For IE */
-            /* Aspect ratio of image, gives initial dimension to prevent text moving down once image is loaded */
-            /* When changing logo, change this also */
+            width: 25%;
+            border: 0;
             aspect-ratio: 125 / 50;
         }
+
         #main {
             vertical-align: middle;
             display: table-cell;
         }
-        /* Progress bar */
-        #progress {
-            width: 45%; /* Bar width */
-            margin: 0 auto;
-            border-radius: 10px; /* Roundness */
-            background-color: #a8a8a8; /* Background colour */
-            padding: 7px 5px;
-            /* border: 5px solid #a8a8a8; Border */
+
+        .main-content {
+            animation: fadein 3s forwards;
         }
+
+        #progress {
+            width: 45%;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: #a8a8a8;
+            padding: 7px 5px;
+        }
+
         #fill {
             padding: 2px 0;
-            background-color: #00b98b; /* Fill colour */
-            width: 35%; /* Bar percentage, change text below also */
-            border-radius: 25px; /* Roundness */
+            background-color: #66a0cd;
+            width: 15%;
+            border-radius: 25px;
             animation: proanimate 2s;
         }
+
         #barpercent h3 {
-            color: white; /* Bar percentage text colour */
-            margin: 0; padding: 0;
+            color: white;
+            margin: 0;
+            padding: 0;
             opacity: 1;
             animation: fadein 3s forwards;
         }
 
-        /* Fades in animation */
-        @keyframes fadein  {
-            from { opacity: 0; }
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
         }
-        /* Animates bar on page load */
+
         @keyframes proanimate {
-            from { width: 0%; }
+            from {
+                width: 0%;
+            }
         }
 
         @media screen and (max-width:600px) {
             img {
                 width: 60%;
             }
+
             h1 {
                 font-size: 1.3em;
             }
+
             h2 {
                 margin: 1.1em;
                 font-size: 1.1em;
             }
+
             #progress {
-                width: 80%; /* Bar width */
+                width: 80%;
             }
         }
 
-        /* Adjust the size of social media icons */
         #social-media img {
-            width: 50px; /* Adjust this value as needed */
-            height: auto; /* Maintain aspect ratio */
-            margin: 10px; /* Add spacing between icons */
+            width: 50px;
+            height: auto;
+            margin: 10px;
             margin-top: 25px;
+            opacity: 0;
+            position: relative;
+            animation: socialMediaAppear 0.5s forwards 0.5s;
+            /* Delay start by 0.5 seconds */
+        }
+
+        @keyframes socialMediaAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
     <title>QuadRevo - Bientôt</title>
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 </head>
+
 <body>
     <div id="main">
-        <img src="assets/logo.svg" alt="Logo QuadRevo">
-        <h1>QuadRevo</h1>
-        <h2>Notre site web est actuellement en construction. </h2>
-        <div id="progress"><div id="fill"><div id="barpercent"><h3>15%</h3></div></div></div>
-        
-        <!-- Social media icons and links -->
+        <div class="main-content">
+            <img src="assets/logo.svg" alt="Logo QuadRevo">
+            <h1>QuadRevo</h1>
+            <h2>Notre site web est actuellement en construction !</h2>
+            <div id="progress">
+                <div id="fill">
+                    <div id="barpercent">
+                        <h3>15%</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="social-media">
             <a href="https://www.instagram.com/quadrevoinc/"><img src="assets/instagram.svg" alt="Instagram"></a>
             <a href="https://linkedin.com/company/quadrevo"><img src="assets/linkedin.svg" alt="LinkedIn"></a>
-            <a href="https://www.facebook.com/profile.php?id=61558426539683"><img src="assets/facebook.svg" alt="Facebook"></a>
+            <a href="https://www.facebook.com/profile.php?id=61558426539683"><img src="assets/facebook.svg"
+                    alt="Facebook"></a>
             <a href="https://x.com/QuadRevoInc"><img src="assets/x.svg" alt="Twitter"></a>
             <a href="https://youtube.com/@quadrevo"><img src="assets/youtube.svg" alt="YouTube"></a>
         </div>
     </div>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </body>
+
 </html>
